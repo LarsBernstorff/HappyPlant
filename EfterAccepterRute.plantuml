@@ -1,0 +1,53 @@
+@startuml
+title Efter accepterRute()
+
+left to right direction
+
+skinparam shadowing false
+skinparam backgroundColor white
+skinparam defaultFontColor #132B4C
+skinparam ObjectBackgroundColor white
+skinparam ObjectBorderColor #132B4C
+
+skinparam object {
+    BackgroundColor<<ny>> #FFF1E7
+    BorderColor<<ny>> #FC5404
+}
+
+hide stereotype
+
+object "<u>v1 : Vinduespudser</u>" as v1 {
+    Navn = "Kim"
+}
+
+object "<u>r1 : Rute</u>" as r1 <<ny>> {
+    Dato = 2026-10-01
+}
+
+object "<u>k1 : Kunde</u>" as k1 {
+    Navn = "Jens"
+}
+
+object "<u>k2 : Kunde</u>" as k2 {
+    Navn = "Hans"
+}
+
+v1 -[#FC5404]- r1
+r1 -[#FC5404]- k1
+r1 -[#FC5404]- k2
+
+k1 -[hidden]down- k2
+
+note bottom of r1
+    <color:#FC5404>Nyt objekt og tildelt dato</color>
+end note
+
+skinparam NoteBackgroundColor white
+skinparam NoteBorderColor white
+
+legend bottom
+    Orange markerer ændringerne.
+    Alle fire postconditions kan findes her.
+endlegend
+
+@enduml
