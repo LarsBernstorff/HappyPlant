@@ -1,0 +1,38 @@
+# View on https://www.plantuml.com/plantuml
+
+
+@startuml
+title A happy exchange
+skinparam style strictuml
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam sequence {
+    ArrowColor #132B4C
+    ActorBorderColor #132B4C
+    ActorBackgroundColor #FFF1E7
+    ParticipantBorderColor #FC5404
+    ParticipantBackgroundColor #FFF1E7
+    LifeLineBorderColor #132B4C
+    NoteBackgroundColor #FFF1E7
+    NoteBorderColor #FC5404
+}
+
+actor ": Curious User" as User
+participant ": Happy Plant" as System
+
+User -> System: startConversation()
+System --> User: "Hello! Let's play ping-pong."
+
+loop 3 happy exchanges
+    User -> System: ping()
+    System --> User: "Pong! :)"
+end
+
+User -> System: endConversation()
+System --> User: "Thanks for playing. Have a happy day!"
+
+note over User
+    I'm happy now too! :) But never use colors in your diagrams, as shown in this example.!
+end note
+@enduml
