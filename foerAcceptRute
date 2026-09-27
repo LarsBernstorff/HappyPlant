@@ -1,0 +1,34 @@
+@startuml
+title Før accepterRute()
+
+skinparam monochrome true
+skinparam shadowing false
+skinparam backgroundColor white
+skinparam ObjectBackgroundColor white
+skinparam NoteBackgroundColor white
+
+object "<u>v1 : Vinduespudser</u>" as v1 {
+    Navn = "Kim"
+}
+
+object "<u>k1 : Kunde</u>" as k1 {
+    Navn = "Jens"
+}
+
+object "<u>k2 : Kunde</u>" as k2 {
+    Navn = "Hans"
+}
+
+note as kontekst
+    Valgt kontekst
+    Dato = 2026-10-01
+    Vinduespudser = v1
+    Kunder = {k1, k2}
+end note
+
+v1 -[hidden]right- k1
+k1 -[hidden]down- k2
+v1 -[hidden]down- kontekst
+kontekst -[hidden]right- k2
+
+@enduml
