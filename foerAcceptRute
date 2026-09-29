@@ -1,5 +1,7 @@
 # Dette er en kommentar til eksempel
-
+#Kundenavn
+#Kundeadresse
+#Kundetelfon
 @startuml
 title Før accepterRute()
 
