@@ -1,0 +1,47 @@
+@startuml
+left to right direction
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam roundcorner 0
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+skinparam class {
+    BackgroundColor white
+    HeaderBackgroundColor white
+    BorderColor black
+    FontColor black
+    AttributeFontColor black
+}
+
+skinparam ArrowColor black
+skinparam ArrowFontColor black
+
+hide circle
+hide methods
+
+class "Gæst" as Gaest {
+    gæstenr.
+    navn
+    e-mail
+}
+
+class Reservation {
+    reservationsnr.
+    ankomst
+    antal personer
+    aftalt pris pr. nat
+    status
+}
+
+class "Værelse" as Vaerelse {
+    værelsesnr.
+    kapacitet
+    pris pr. nat
+}
+
+Gaest "1" -- "0..*" Reservation
+Reservation "0..1" -- "1" Vaerelse
+
+@enduml
