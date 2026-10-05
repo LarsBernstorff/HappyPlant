@@ -1,0 +1,41 @@
+'Bemærk det er ikke sikkert at kvalitetskriterierne er overholdt. Dem bør I kontrollere.
+@startuml
+skinparam style strictuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam roundcorner 0
+skinparam sequenceMessageAlign center
+
+skinparam sequence {
+    ArrowColor black
+    LifeLineBorderColor black
+    ParticipantBorderColor black
+    ParticipantBackgroundColor white
+    ParticipantFontColor black
+    ActorBorderColor black
+    ActorBackgroundColor white
+    ActorFontColor black
+}
+
+skinparam defaultFontColor black
+
+hide footbox
+
+actor ": Receptionist" as R
+participant ": Hotelsystem" as H
+
+R -> H : søgLedigeVærelser(ankomst, afrejse, antalPersoner)
+
+||30||
+
+H -->> R : ledigeVærelser
+
+||30||
+
+H -->> R : reservationsbekræftelse(R901)
+
+||30||
+
+R -> H : opretReservation(G07, 204, 2026-11-12, 2026-11-14)
+
+@enduml
