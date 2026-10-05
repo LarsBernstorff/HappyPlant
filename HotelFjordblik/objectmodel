@@ -1,0 +1,43 @@
+'Bemærk det er ikke sikkert at kvalitetskriterierne er overholdt. Dem bør I kontrollere.
+@startuml
+
+left to right direction
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam roundcorner 0
+skinparam linetype ortho
+
+skinparam object {
+    BackgroundColor white
+    BorderColor black
+    FontColor black
+    AttributeFontColor black
+}
+
+skinparam ArrowColor black
+
+object "<u>g07 : Gæst</u>" as gaest {
+    gæstenr. = G07
+    navn = Anna Lund
+}
+
+object "<u>r901 : Reservation</u>" as reservation {
+    reservationsnr. = R901
+    ankomst = 2026-11-12
+    afrejse = 2026-11-14
+    antal personer = 3
+    aftalt pris pr. nat = 900
+    status = Bekræftet
+}
+
+object "<u>v204 : Værelse</u>" as vaerelse {
+    værelsesnr. = 204
+    kapacitet = 2
+    pris pr. nat = 900
+}
+
+gaest -- reservation
+reservation -- vaerelse
+
+@enduml
